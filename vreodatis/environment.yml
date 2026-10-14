@@ -9,6 +9,8 @@ dependencies:
   - geocube
   - jupytergis>=0.16
   - jupyter-tiler
+  - jupyter_app_launcher
+  - jupyterlab-favorites
   - openeo
   - qgis
   - xdem
