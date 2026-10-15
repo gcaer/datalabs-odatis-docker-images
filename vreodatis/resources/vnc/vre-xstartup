@@ -2,7 +2,13 @@
 # This file is provided under MIT license. See LICENSE file.
 # VNC session startup: add desktop shortcuts, then start XFCE.
 
-DESKTOP_DIR="${HOME}/Desktop"
+# Dedicated config dir for the VRE desktop: the user's existing XFCE settings and
+# user-dirs.dirs (e.g. from another desktop on the cluster, home shared through
+# Apptainer) would otherwise override the image ones (/etc/xdg).
+export XDG_CONFIG_HOME="${HOME}/.config/vre-odatis"
+mkdir -p "${XDG_CONFIG_HOME}"
+
+DESKTOP_DIR="$(xdg-user-dir DESKTOP 2>/dev/null || echo "${HOME}/Desktop")"
 mkdir -p "${DESKTOP_DIR}"
 
 for app in org.qgis.qgis; do
