@@ -1,0 +1,17 @@
+#!/bin/bash
+# This file is provided under MIT license. See LICENSE file.
+# VNC session startup: add desktop shortcuts, then start XFCE.
+
+DESKTOP_DIR="${HOME}/Desktop"
+mkdir -p "${DESKTOP_DIR}"
+
+for app in org.qgis.qgis; do
+    src="/usr/share/applications/${app}.desktop"
+    dst="${DESKTOP_DIR}/${app}.desktop"
+    [ -f "${src}" ] || continue
+    [ -f "${dst}" ] || cp "${src}" "${dst}"
+    # executable = trusted launcher for xfdesktop (no gvfs metadata in the image)
+    chmod +x "${dst}"
+done
+
+exec xfce4-session

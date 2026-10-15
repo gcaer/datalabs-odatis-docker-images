@@ -129,7 +129,7 @@ def setup_novnc():
             "vncserver",
             "-rfbport", str(port),
             "-verbose",
-            "-xstartup", "/usr/bin/dbus-launch xfce4-session",
+            "-xstartup", "/usr/bin/dbus-launch /usr/local/bin/vre-xstartup",
             "-geometry", "1680x1050",
             "-fg"
         ]))

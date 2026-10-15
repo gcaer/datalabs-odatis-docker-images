@@ -13,6 +13,8 @@ set -e
 # COPY /resources/vnc /opt
 mv resources/vnc/start-notebook-genvnctoken.sh /usr/local/bin/
 chmod +x /usr/local/bin/start-notebook-genvnctoken.sh
+cp resources/vnc/vre-xstartup /usr/local/bin/
+chmod +x /usr/local/bin/vre-xstartup
 cp resources/vnc/* /opt
 
 # Customize Desktop
