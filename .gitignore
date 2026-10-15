@@ -139,3 +139,5 @@ dmypy.json
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+# local workdir mounted by make run
+work/

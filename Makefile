@@ -35,13 +35,25 @@ update:
 
 HARBOR_REGISTRY?=registry.hpc.ifremer.fr
 HARBOR_OWNER?=hpc-jupyterhub-dev
-
+ 
 build:
 	cd vreodatis ; \
 	docker build -t vre-odatis:master . --progress=plain --platform linux/amd64;
-	
+
+# Run the image locally: JupyterLab on http://127.0.0.1:$(PORT), ./work mounted in the home
+PORT?=8888
+.PHONY: run shell
+run:
+	mkdir -p work
+	docker run --rm -it -p $(PORT):8888 -v $(PWD)/work:/home/jovyan/work vre-odatis:master \
+	  jupyter lab --ip 0.0.0.0 --port 8888 --no-browser
+
+# Interactive shell in the image (make shell USER_ARG="--user root" to be root)
+shell:
+	docker run --rm -it $(USER_ARG) vre-odatis:master bash
+
 publish:
 	docker tag \
-	  vreodatis:master \
+	  vre-odatis:master \
 	  "$(HARBOR_REGISTRY)/$(HARBOR_OWNER)/vre-odatis:master"
 	docker push "$(HARBOR_REGISTRY)/$(HARBOR_OWNER)/vre-odatis:master"
