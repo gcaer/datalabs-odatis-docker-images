@@ -9,11 +9,16 @@ all: vreodatis
 .PHONY: vreodatis
 vreodatis : conda-lock apt docker
 
+# Fast lock: pixi solve (rattler + uv) then conversion of vreodatis/pixi.lock to conda-lock.yml
 conda-lock:
+	pixi run lock vreodatis
+
+# Former lock with conda-lock (slow), kept to compare results
+conda-lock-legacy:
 	cd vreodatis ; \
-	conda-lock lock -f environment.yml -f ../.base_layer/base-notebook-environment.yml  -f ../.base_layer/pangeo-notebook-environment.yml  -p linux-64  --no-mamba; \
-	conda-lock render -k explicit -p linux-64; \
-	../generate-packages-list.py conda-linux-64.lock > packages.txt
+	conda-lock lock -f environment.yml -f ../.base_layer/base-notebook-environment.yml  -f ../.base_layer/pangeo-notebook-environment.yml  -p linux-64;
+#	conda-lock render -k explicit -p linux-64; \
+#	../generate-packages-list.py conda-linux-64.lock > packages.txt
 
 apt:
 	cd vreodatis ; \
