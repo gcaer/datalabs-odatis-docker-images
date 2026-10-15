@@ -12,5 +12,6 @@ dependencies:
   - jupyter_app_launcher
   - jupyterlab-favorites
   - openeo
+  - pangeo-notebook=2026.10.09 # override base layer: jupytergis>=0.16 needs jupyterlab>=4.6
   - qgis
   - xdem
