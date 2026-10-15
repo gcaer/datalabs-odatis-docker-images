@@ -14,4 +14,5 @@ dependencies:
   - openeo
   - pangeo-notebook=2026.10.09 # override base layer: jupytergis>=0.16 needs jupyterlab>=4.6
   - qgis
+  - websockify # used by the vnc module (python 3.14 of the base env breaks it)
   - xdem

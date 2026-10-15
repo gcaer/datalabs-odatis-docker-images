@@ -463,6 +463,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/watchfiles-1.3.0-py311h1180b86_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/wayland-1.26.0-hc1c935e_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/websockets-17.2-py313h7f1de9a_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/websockify-0.13.0-py313h07c4f96_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/wrapt-2.5.1-py313hd42f317_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/x264-1!164.3095-pl5321h63c0a64_3.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/x265-3.5-h73f68a7_4.conda
@@ -525,6 +526,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/astropy-iers-data-0.2026.10.12.1.3.27-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/asttokens-3.0.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/async-lru-2.4.0-pyh5ded981_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/async-timeout-5.0.1-pyhcf101f3_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/attrs-26.1.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/azure-core-1.41.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/azure-identity-1.26.0-pyhd8ed1ab_0.conda
@@ -746,6 +748,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/jupyterlab_pygments-0.3.0-pyhd8ed1ab_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/jupyterlab_server-2.28.1-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/jupyterlab_widgets-3.0.17-pyhcf101f3_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/jwcrypto-1.6.1-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/kerchunk-0.2.10-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/kombu-5.6.2-pyha770c72_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/lark-1.3.1-pyhd8ed1ab_0.conda
@@ -909,6 +912,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/rasterix-0.2.2-pyhc364b38_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/reacttrs-0.2.1-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/rechunker-0.5.2-pyhd8ed1ab_2.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/redis-py-8.1.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/referencing-0.37.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/requests-2.34.2-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/requests-cache-1.3.3-pyhd8ed1ab_0.conda
@@ -9795,6 +9799,25 @@ packages:
   run_exports: {}
   size: 422538
   timestamp: 1791057461142
+- conda: https://conda.anaconda.org/conda-forge/linux-64/websockify-0.13.0-py313h07c4f96_2.conda
+  sha256: 17ced21f15e1c777c4e33e6e321f513a9160425be4b58b31f52cffd212fafc4e
+  md5: dcc5334fd7fd31f3efd6dd01cab79821
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - jwcrypto
+  - libgcc >=14
+  - numpy
+  - python >=3.13,<3.14.0a0
+  - python_abi 3.13.* *_cp313
+  - redis-py
+  - requests
+  license: LGPL-3.0-only
+  license_family: LGPL
+  purls:
+  - pkg:pypi/websockify?source=hash-mapping
+  run_exports: {}
+  size: 93501
+  timestamp: 1757022885792
 - conda: https://conda.anaconda.org/conda-forge/linux-64/wrapt-2.5.1-py313hd42f317_0.conda
   sha256: 8fc08c6be20e3bd9d159c64733f832a5c3129854c0bd3969ffcad8674543c5e7
   md5: 097710342ba3685ef707e58e08fffe50
@@ -10761,6 +10784,19 @@ packages:
   run_exports: {}
   size: 25979
   timestamp: 1791849022275
+- conda: https://conda.anaconda.org/conda-forge/noarch/async-timeout-5.0.1-pyhcf101f3_2.conda
+  sha256: 6638b68ab2675d0bed1f73562a4e75a61863b903be1538282cddb56c8e8f75bd
+  md5: 0d0ef7e4a0996b2c4ac2175a12b3bf69
+  depends:
+  - python >=3.10
+  - python
+  license: Apache-2.0
+  license_family: APACHE
+  purls:
+  - pkg:pypi/async-timeout?source=hash-mapping
+  run_exports: {}
+  size: 13559
+  timestamp: 1767290444597
 - conda: https://conda.anaconda.org/conda-forge/noarch/attrs-26.1.0-pyhcf101f3_0.conda
   sha256: 1b6124230bb4e571b1b9401537ecff575b7b109cc3a21ee019f65e083b8399ab
   md5: c6b0543676ecb1fb2d7643941fe375f2
@@ -14292,6 +14328,21 @@ packages:
   run_exports: {}
   size: 219589
   timestamp: 1787045328396
+- conda: https://conda.anaconda.org/conda-forge/noarch/jwcrypto-1.6.1-pyh5ded981_0.conda
+  sha256: e26a8012858f177890b56263bd8fc1ebddaecd7c460bda6c089515114d4b123e
+  md5: ec73e27532835ee82f58a964b663a39a
+  depends:
+  - python >=3.11
+  - cryptography >=3.4
+  - typing_extensions
+  - python
+  license: LGPL-3.0-only
+  license_family: LGPL
+  purls:
+  - pkg:pypi/jwcrypto?source=compressed-mapping
+  run_exports: {}
+  size: 116153
+  timestamp: 1789719825293
 - conda: https://conda.anaconda.org/conda-forge/noarch/kerchunk-0.2.10-pyhd8ed1ab_0.conda
   sha256: 9d8ed042bfde99c5c2c6c859fd0c9bce4137d42ea2033ce68aabd9c66564fbff
   md5: 942b809ecbdbeb225e2e22592521f8e8
@@ -16719,6 +16770,19 @@ packages:
   run_exports: {}
   size: 24538
   timestamp: 1734957808410
+- conda: https://conda.anaconda.org/conda-forge/noarch/redis-py-8.1.0-pyhd8ed1ab_0.conda
+  sha256: 34953ed52e576d76fc3a85de5014bdc215de0d1f6fa60172a3dee410ad3dcc5b
+  md5: 9bfcd030b42e5c6b7f7fb49f454e1e8c
+  depends:
+  - async-timeout >=4.0.3
+  - python >=3.10
+  license: MIT
+  license_family: MIT
+  purls:
+  - pkg:pypi/redis?source=hash-mapping
+  run_exports: {}
+  size: 352998
+  timestamp: 1785493803310
 - conda: https://conda.anaconda.org/conda-forge/noarch/referencing-0.37.0-pyhcf101f3_0.conda
   sha256: 0577eedfb347ff94d0f2fa6c052c502989b028216996b45c7f21236f25864414
   md5: 870293df500ca7e18bedefa5838a22ab

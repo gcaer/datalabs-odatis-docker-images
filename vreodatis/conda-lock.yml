@@ -7,7 +7,7 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: c09b1664d2af8bb59e2250cd2de556ae466a3c1ae4793933e8588a4b4e7d2d52
+    linux-64: e864910b836e758a5f42d4efbbb41cabaa513434e60aee65273af6143c183673
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -550,6 +550,18 @@ package:
   hash:
     md5: 6db849521a38ec0cd85c90e2e5c0a6bd
     sha256: b9dc6d90fd922001712bbdacc0987d981e22c803b22250d7685e89188881fcc6
+  category: main
+  optional: false
+- name: async-timeout
+  version: 5.0.1
+  manager: conda
+  platform: linux-64
+  dependencies:
+    python: ''
+  url: https://conda.anaconda.org/conda-forge/noarch/async-timeout-5.0.1-pyhcf101f3_2.conda
+  hash:
+    md5: 0d0ef7e4a0996b2c4ac2175a12b3bf69
+    sha256: 6638b68ab2675d0bed1f73562a4e75a61863b903be1538282cddb56c8e8f75bd
   category: main
   optional: false
 - name: at-spi2-atk
@@ -5894,6 +5906,20 @@ package:
   hash:
     md5: 1fb3f0d175d6e92f56139fb46a17aa2d
     sha256: 697c4a5b4771e8fbd5a9bbb614899982c7e586eafaf123c210f9d1794436f00a
+  category: main
+  optional: false
+- name: jwcrypto
+  version: 1.6.1
+  manager: conda
+  platform: linux-64
+  dependencies:
+    python: ''
+    cryptography: '>=3.4'
+    typing_extensions: ''
+  url: https://conda.anaconda.org/conda-forge/noarch/jwcrypto-1.6.1-pyh5ded981_0.conda
+  hash:
+    md5: ec73e27532835ee82f58a964b663a39a
+    sha256: e26a8012858f177890b56263bd8fc1ebddaecd7c460bda6c089515114d4b123e
   category: main
   optional: false
 - name: kealib
@@ -13724,6 +13750,19 @@ package:
     sha256: d6f8da9984d4d01d48ad3616a82343c2473ca3496b861a77b808eced6201e97f
   category: main
   optional: false
+- name: redis-py
+  version: 8.1.0
+  manager: conda
+  platform: linux-64
+  dependencies:
+    async-timeout: '>=4.0.3'
+    python: '>=3.10'
+  url: https://conda.anaconda.org/conda-forge/noarch/redis-py-8.1.0-pyhd8ed1ab_0.conda
+  hash:
+    md5: 9bfcd030b42e5c6b7f7fb49f454e1e8c
+    sha256: 34953ed52e576d76fc3a85de5014bdc215de0d1f6fa60172a3dee410ad3dcc5b
+  category: main
+  optional: false
 - name: referencing
   version: 0.37.0
   manager: conda
@@ -15651,6 +15690,25 @@ package:
   hash:
     md5: b0aa6fb6782b97f4caf4af520e4920aa
     sha256: c8b33caec9ba592771d6b83f5b28b2c133b2a982b65ea24ddb26627d5b457a83
+  category: main
+  optional: false
+- name: websockify
+  version: 0.13.0
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    jwcrypto: ''
+    libgcc: '>=14'
+    numpy: ''
+    python: '>=3.13,<3.14.0a0'
+    python_abi: 3.13.* *_cp313
+    redis-py: ''
+    requests: ''
+  url: https://conda.anaconda.org/conda-forge/linux-64/websockify-0.13.0-py313h07c4f96_2.conda
+  hash:
+    md5: dcc5334fd7fd31f3efd6dd01cab79821
+    sha256: 17ced21f15e1c777c4e33e6e321f513a9160425be4b58b31f52cffd212fafc4e
   category: main
   optional: false
 - name: werkzeug

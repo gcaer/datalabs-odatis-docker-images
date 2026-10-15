@@ -47,7 +47,7 @@ wget 'https://sourceforge.net/projects/turbovnc/files/3.1/turbovnc_3.1_amd64.deb
 apt-get install -y -q ./turbovnc_3.1_amd64.deb
 rm ./turbovnc_3.1_amd64.deb
 ln -s /opt/TurboVNC/bin/* /usr/local/bin/
-mamba install --quiet websockify
+# websockify is installed in the notebook env (environment.yml)
 cp resources/branding/desktop/wallpaper.png /opt/vre/wallpaper.png
 cp -r resources/branding/desktop/xfce-perchannel-xml /etc/xdg/xfce4/xfconf/
 # Fix missing rebind.so issue

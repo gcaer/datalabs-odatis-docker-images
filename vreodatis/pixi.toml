@@ -134,6 +134,7 @@ platforms = ["linux-64"]
 "timezonefinder" = "*"
 "virtualizarr" = "*"
 "watermark" = "*"
+"websockify" = "*"
 "xarray" = "*"
 "xarray-spatial" = "*"
 "xarray_leaflet" = "*"
