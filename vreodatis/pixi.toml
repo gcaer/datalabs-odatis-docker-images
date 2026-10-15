@@ -18,6 +18,7 @@ platforms = ["linux-64"]
 "ciso" = "*"
 "cmocean" = "*"
 "contextily" = "*"
+"copernicusmarine" = "*"
 "dask-geopandas" = "*"
 "dask-ml" = "*"
 "datashader" = "*"

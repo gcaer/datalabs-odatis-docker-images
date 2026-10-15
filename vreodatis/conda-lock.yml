@@ -7,7 +7,7 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: e864910b836e758a5f42d4efbbb41cabaa513434e60aee65273af6143c183673
+    linux-64: 53e254f3b63c6d19f965ff14027b32211417a84ef8ce7217144f2c24a3108760
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -325,6 +325,23 @@ package:
   hash:
     md5: f4e90937bbfc3a4a92539545a37bb448
     sha256: 5b9ef6d338525b332e17c3ed089ca2f53a5d74b7a7b432747d29c6466e39346d
+  category: main
+  optional: false
+- name: arcosparse
+  version: 0.5.1
+  manager: conda
+  platform: linux-64
+  dependencies:
+    pandas: '>=2.0.0'
+    pyarrow: '>=17.0.0'
+    pystac: '>=1.8.3,<2.0.0'
+    python: '>=3.10'
+    requests: '>=2.27.1,<3.0.0'
+    tqdm: '>=4.65.0,<5.0.0'
+  url: https://conda.anaconda.org/conda-forge/noarch/arcosparse-0.5.1-pyhd8ed1ab_0.conda
+  hash:
+    md5: 3fab2110d93a828f88ace66e418d6ef8
+    sha256: e776085662b606fd4a0853bf1f4f1f32dbebc8e072cbb7eee9a0a938c13f7855
   category: main
   optional: false
 - name: argon2-cffi
@@ -1996,6 +2013,32 @@ package:
   hash:
     md5: 1883f23b947ffaa13f9511ea817fc4e6
     sha256: 078f4a0f83ee7d0f88c110e15f9f94ff4080dc925711d1d22b52779c2e48cf87
+  category: main
+  optional: false
+- name: copernicusmarine
+  version: 2.5.0
+  manager: conda
+  platform: linux-64
+  dependencies:
+    arcosparse: '>=0.5.1,<0.6.0'
+    boto3: '>=1.26'
+    click: '>8.2.0,!=8.3.0,!=8.3.1'
+    dask-core: '>=2024.8.1'
+    h5netcdf: '>=1.4.0,<2.0.0'
+    h5py: '>=3.8.0'
+    numpy: '>=2.1.0'
+    pydantic: '>=2.9.1,<3.0.0'
+    pystac: '>=1.11.0'
+    python: '>=3.11'
+    requests: '>=2.27.1'
+    semver: '>=3.0.2'
+    tqdm: '>=4.65.0'
+    xarray: '>=2024.10.0'
+    zarr: '>=2.18.3'
+  url: https://conda.anaconda.org/conda-forge/noarch/copernicusmarine-2.5.0-pyhd8ed1ab_0.conda
+  hash:
+    md5: 441e8936fa6b300b097a36c7e9b23fb7
+    sha256: 584f485b4168a3af7d513c3df1c9c2d426f08ed7cf836f76552d92a98b908d8e
   category: main
   optional: false
 - name: coverage
