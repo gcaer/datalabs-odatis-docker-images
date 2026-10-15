@@ -20,4 +20,6 @@ for app in org.qgis.qgis; do
     chmod +x "${dst}"
 done
 
-exec xfce4-session
+# dbus-launch here, after the export: xfconfd is D-Bus activated and inherits the
+# environment of the bus daemon, it would otherwise read ~/.config/xfce4.
+exec /usr/bin/dbus-launch --exit-with-session xfce4-session
