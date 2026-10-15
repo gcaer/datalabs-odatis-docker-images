@@ -1,0 +1,46 @@
+- title: Pôle ODATIS
+  source: https://www.odatis-ocean.fr/
+  type: url
+  icon: './images/odatis-doc-logo-o.svg'
+  catalog: Odatis Expertise Center
+  args:
+    sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+    referrerPolicy: ['no-referrer']
+    createNewWindow: true
+
+- title: Documentation
+  source: https://odatis-public.gitlab-pages.ifremer.fr/vre/portal-doc/
+  type: url
+  icon: './images/book-text.svg'
+  catalog: Odatis Expertise Center
+  args:
+    sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+    referrerPolicy: ['no-referrer']
+    createNewWindow: false
+
+- title: Tutorials
+  source: https://odatis-public.gitlab-pages.ifremer.fr/vre/portal-gallery/
+  type: url
+  icon: './images/graduation-cap.svg'
+  catalog: Odatis Expertise Center
+  args:
+    sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+    referrerPolicy: ['no-referrer']
+    createNewWindow: false
+
+- title: GitLab
+  source: https://gitlab.ifremer.fr/odatis-public
+  type: url
+  icon: './images/gitlab.svg'
+  catalog: Odatis Expertise Center
+  args:
+    sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+    referrerPolicy: ['no-referrer']
+    createNewWindow: true
+
+# For icon (#1976D2):
+# * https://lucide.dev/icons/ (gitlab, graduation-cap, book-text)
+# * https://heroicons.com/
+# * https://tabler.io/icons
+# * https://feathericons.com/
+# * https://phosphoricons.com/
