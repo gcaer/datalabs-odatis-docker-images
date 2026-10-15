@@ -88,7 +88,7 @@ def setup_rstudio():
 
 def setup_codeserver():
     # Make sure codeserver is in $PATH
-    def _codeserver_command(port):
+    def _codeserver_command(unix_socket):
         full_path = shutil.which("code-server")
         if not full_path:
             raise FileNotFoundError("Can not find code-server in $PATH")
@@ -100,9 +100,13 @@ def setup_codeserver():
 
         return [
             full_path,
-            "--port=" + str(port),
+            # Unix socket in a private (0700) temporary folder created by
+            # jupyter-server-proxy: only the user can reach code-server, and
+            # Jupyter already authenticates the requests, so no password.
+            "--socket=" + unix_socket,
+            "--socket-mode=600",
             "--auth",
-            "password",
+            "none",
             "--disable-telemetry",
             "--extensions-dir",
             os.path.join(os.path.join(working_dir, ".vscode"), "extensions"),
@@ -111,6 +115,7 @@ def setup_codeserver():
 
     return {
         "command": _codeserver_command,
+        "unix_socket": True,
         "timeout": 20,
         "launcher_entry": {
             "title": "VS Code IDE",
