@@ -1,0 +1,36 @@
+# Ifremer STAC catalogs added to the EODAG providers (eodag >= 4.5)
+# Collections are discovered from the /collections endpoint of each catalog.
+ifremer:
+  priority: 0
+  roles:
+    - host
+  description: Ifremer STAC catalog (production)
+  url: https://stac-pg-api.ifremer.fr
+  search:
+    type: StacSearch
+    api_endpoint: https://stac-pg-api.ifremer.fr/search
+    discover_collections:
+      # /collections is paginated (10 per page by default)
+      fetch_url: https://stac-pg-api.ifremer.fr/collections?limit=1000
+  products:
+    GENERIC_COLLECTION:
+      _collection: '{collection}'
+  download:
+    type: HTTPDownload
+
+ifremer_val:
+  priority: 0
+  roles:
+    - host
+  description: Ifremer STAC catalog (validation)
+  url: https://stac-pg-api.isival.ifremer.fr
+  search:
+    type: StacSearch
+    api_endpoint: https://stac-pg-api.isival.ifremer.fr/search
+    discover_collections:
+      fetch_url: https://stac-pg-api.isival.ifremer.fr/collections?limit=1000
+  products:
+    GENERIC_COLLECTION:
+      _collection: '{collection}'
+  download:
+    type: HTTPDownload
