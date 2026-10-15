@@ -7,7 +7,8 @@ apt-get autoclean --yes
 apt-get autoremove --yes
 
 rm -rf /var/lib/apt/lists/*
-rm -rf /etc/apt/sources.list.d/*
+# keep ubuntu.sources: since Ubuntu 24.04 the main repositories are declared there
+find /etc/apt/sources.list.d -mindepth 1 ! -name ubuntu.sources -delete
 rm -rf /usr/local/src/*
 
 rm -rf /var/cache/apt/*
