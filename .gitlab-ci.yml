@@ -1,0 +1,16 @@
+include:
+  # Built only on a tag X.Y.Z and pushed to
+  # gitlab-registry.ifremer.fr/odatis-public/vre/datalabs-odatis-docker-images/vre-odatis:X.Y.Z (+ :latest).
+  - component: $CI_SERVER_FQDN/dev-ops/templates/automatisation/ci-cd/pipeline-generic-container-image@1.1.17
+    inputs:
+      container_image_name: datalabs-odatis-docker-images/vre-odatis
+      container_image_docker_file_path: vreodatis/Dockerfile
+      container_image_build_context: vreodatis
+
+# Overrides the rules of the component's build job: build on a release tag
+# only (one image = one tag = one version). Its own tag rule tests
+# $CI_COMMIT_BRANCH, which is empty in a tag pipeline, so a release tag would
+# build nothing, and it builds on every other pipeline.
+"runtime datalabs-odatis-docker-images/vre-odatis 🐳":
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^v?\d+\.\d+\.\d+/
