@@ -2,3 +2,6 @@ Dockerfile
 environment.yml
 packages.txt
 .dockerignore
+.pixi
+pixi.toml
+pixi.lock
