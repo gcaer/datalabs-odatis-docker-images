@@ -6,6 +6,7 @@ platforms = ["linux-64"]
 
 [dependencies]
 "adlfs" = "*"
+"apptainer" = "*"
 "argopy" = "<1.4.0"
 "awscli" = "*"
 "black" = "*"

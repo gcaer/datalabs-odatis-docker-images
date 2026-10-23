@@ -7,7 +7,7 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: 53e254f3b63c6d19f965ff14027b32211417a84ef8ce7217144f2c24a3108760
+    linux-64: b8fa2bac524f7773675a50051371a2d4024e933ea8d6971e300cf7f1b7965c50
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -325,6 +325,29 @@ package:
   hash:
     md5: f4e90937bbfc3a4a92539545a37bb448
     sha256: 5b9ef6d338525b332e17c3ed089ca2f53a5d74b7a7b432747d29c6466e39346d
+  category: main
+  optional: false
+- name: apptainer
+  version: 1.5.4
+  manager: conda
+  platform: linux-64
+  dependencies:
+    cni-plugins: '>=0.7.4'
+    gocryptfs: ''
+    squashfs-tools: ''
+    fuse-overlayfs: ''
+    squashfuse: ''
+    __glibc: '>=2.17,<3.0.a0'
+    libgcc: '>=15'
+    libstdcxx: '>=15'
+    libuuid: '>=2.42.4,<3.0a0'
+    libseccomp: '>=2.6.1,<3.0a0'
+    openssl: '>=3.5.8,<4.0a0'
+    libarchive: '>=3.8.9,<3.9.0a0'
+  url: https://conda.anaconda.org/conda-forge/linux-64/apptainer-1.5.4-hf3be947_0.conda
+  hash:
+    md5: 3470650ec6c97aa173762e7e03246abd
+    sha256: 2b5b17ddafdecc47d1aefba01e522ac66cd06f427f8675ff8c922156897a2243
   category: main
   optional: false
 - name: arcosparse
@@ -1897,6 +1920,31 @@ package:
   hash:
     md5: dd71e4ec2fbffe38c0359976505f816e
     sha256: 70d3469d7a9b23a38526d7313ee10e7826f0245ffb5a7eeec15a134d90636a32
+  category: main
+  optional: false
+- name: cni
+  version: 1.0.1
+  manager: conda
+  platform: linux-64
+  dependencies:
+    jq: ''
+    libgcc-ng: '>=9.4.0'
+  url: https://conda.anaconda.org/conda-forge/linux-64/cni-1.0.1-ha975731_1.tar.bz2
+  hash:
+    md5: 58f92707fb5595c8cd90d278f602011c
+    sha256: 4d83a78ca08a6e40f48bc2d93cc8646959e175bd21b97dc055e44558605a3984
+  category: main
+  optional: false
+- name: cni-plugins
+  version: 1.3.0
+  manager: conda
+  platform: linux-64
+  dependencies:
+    cni: 1.0.1.*
+  url: https://conda.anaconda.org/conda-forge/linux-64/cni-plugins-1.3.0-ha8f183a_0.conda
+  hash:
+    md5: 7b19dcc220b79ec9249ecf2f4e671986
+    sha256: 0bc7985c802700112d0e6de90bebf300518a7bf68d2767b5654ce7f90bc98245
   category: main
   optional: false
 - name: color-operations
@@ -3488,6 +3536,20 @@ package:
     sha256: 7d17272012e7479ba58f8a72b522d3e88e6837a04a111a278ff417aa82364255
   category: main
   optional: false
+- name: fuse-overlayfs
+  version: '1.17'
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libfuse3: '>=3.18.2,<4.0a0'
+    libgcc: '>=14'
+  url: https://conda.anaconda.org/conda-forge/linux-64/fuse-overlayfs-1.17-ha5fcf3e_0.conda
+  hash:
+    md5: 61546e2a6f3884fcbcb014a689d8d71b
+    sha256: 15d21ce4754cfed7a3babb80c57ede15fbcdcd8d74cb831cb3b80eae0cefb7ae
+  category: main
+  optional: false
 - name: future
   version: 1.0.0
   manager: conda
@@ -3962,6 +4024,17 @@ package:
   hash:
     md5: 576e32739f323438bf69ab006c21be7b
     sha256: f36c336efc874f346a53a9011f67e997f9faac505562cc18c13b6d399cfe61c7
+  category: main
+  optional: false
+- name: gocryptfs
+  version: 2.6.1
+  manager: conda
+  platform: linux-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/linux-64/gocryptfs-2.6.1-ha770c72_0.conda
+  hash:
+    md5: bb437fbff41ae6014e00e92a3121ab9f
+    sha256: ce4a5def3bb39644f1b3b9e948a6c897dbae5b3a47d93011447757990d257838
   category: main
   optional: false
 - name: google-api-core
@@ -5229,6 +5302,20 @@ package:
   hash:
     md5: d14d799f3aec31b2eb761e3d394f7bab
     sha256: 0a3b690b4c0601319607b7fd4ba2eefcd87dc6a4b39d5ad6b50d8e4cb16f7442
+  category: main
+  optional: false
+- name: jq
+  version: 1.8.2
+  manager: conda
+  platform: linux-64
+  dependencies:
+    oniguruma: '>=6.9.10,<6.10.0a0'
+    libgcc: '>=14'
+    __glibc: '>=2.17,<3.0.a0'
+  url: https://conda.anaconda.org/conda-forge/linux-64/jq-1.8.2-h280c20c_1.conda
+  hash:
+    md5: 6ec056e539486e84f0c7acef6b5863f9
+    sha256: f14c52155ba14ccb41fdd6f71d74b21153c35e131185434da7334cf25b3eef46
   category: main
   optional: false
 - name: json-c
@@ -6829,6 +6916,20 @@ package:
   hash:
     md5: b72a266a9317036fd0464cb98b027cd0
     sha256: ec607dd5445dd17ff6bf8b7fe6832e5504c226dd91d3aaea7ba83569808b0ce4
+  category: main
+  optional: false
+- name: libfuse3
+  version: 3.18.3
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libgcc: '>=15'
+    libiconv: '>=1.18,<2.0a0'
+  url: https://conda.anaconda.org/conda-forge/linux-64/libfuse3-3.18.3-h65976fe_0.conda
+  hash:
+    md5: ea991024926050826cec2017de293fa8
+    sha256: f1a3c8d43d71d19a931c08c0069318de971551a6b66a9424a92d576736471675
   category: main
   optional: false
 - name: libgbm
@@ -8930,6 +9031,19 @@ package:
     sha256: 1a3c7f637bfac44e7afee097f08b5ae0c367194f9608daea314ab616dc7757e0
   category: main
   optional: false
+- name: libseccomp
+  version: 2.6.1
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libgcc: '>=15'
+  url: https://conda.anaconda.org/conda-forge/linux-64/libseccomp-2.6.1-h7cc23a3_2.conda
+  hash:
+    md5: 86efecd73563d98d911da7e246bacccb
+    sha256: 36b717f86c1f5c1fe56733c4e0b964c602ec4621f686c3e7ce651a651b0c991b
+  category: main
+  optional: false
 - name: libsecret
   version: 0.21.7
   manager: conda
@@ -10808,6 +10922,19 @@ package:
   hash:
     md5: 948cdce07fa41a03b705796efcc196cc
     sha256: c1d32b6cec172bc7bf57b90b503993d5175684a9fc9398c0f5c0857cee2bb02a
+  category: main
+  optional: false
+- name: oniguruma
+  version: 6.9.10
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libgcc: '>=15'
+  url: https://conda.anaconda.org/conda-forge/linux-64/oniguruma-6.9.10-hebe6cf0_1.conda
+  hash:
+    md5: d0d628a0259bb9cbcd73f792b0b61387
+    sha256: 098de630b10d3276d52b075360fa8492574ac3f60ff098a8f32cc1738274f1dd
   category: main
   optional: false
 - name: opencl-headers
@@ -14718,6 +14845,43 @@ package:
   hash:
     md5: f2f6f52b5e849bb8ae22afbda0196c8d
     sha256: 5ed158eca7e4af8e58f7b2df9f97ec8a190e2c2683930fa3ce229ae7f8283aad
+  category: main
+  optional: false
+- name: squashfs-tools
+  version: 4.7.5
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libgcc: '>=14'
+    zstd: '>=1.5.7,<1.6.0a0'
+    lz4-c: '>=1.10.0,<1.11.0a0'
+    liblzma: '>=5.8.2,<6.0a0'
+    lzo: '>=2.10,<3.0a0'
+    libzlib: '>=1.3.1,<2.0a0'
+  url: https://conda.anaconda.org/conda-forge/linux-64/squashfs-tools-4.7.5-h7b2cdf3_0.conda
+  hash:
+    md5: 6736d727970007fe6822334502eaabc5
+    sha256: 26ff56e6971967fb3db558522bd7c48be138a6dd4d89a3f0d1da7fc193f2fa85
+  category: main
+  optional: false
+- name: squashfuse
+  version: 0.6.5
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libfuse3: '>=3.18.3,<4.0a0'
+    libgcc: '>=15'
+    liblzma: '>=5.8.3,<6.0a0'
+    libzlib: '>=1.3.2,<2.0a0'
+    lz4-c: '>=1.10.0,<1.11.0a0'
+    lzo: '>=2.10,<3.0a0'
+    zstd: '>=1.5.7,<1.6.0a0'
+  url: https://conda.anaconda.org/conda-forge/linux-64/squashfuse-0.6.5-h04c0829_0.conda
+  hash:
+    md5: fb2933b15d90541ca4d47346b84b4588
+    sha256: c86fcfbb212a1b23b39f67ec2bd465e292a458d3c9afb0cea5a7998973c5de6f
   category: main
   optional: false
 - name: stac-pydantic
