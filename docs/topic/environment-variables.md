@@ -39,8 +39,8 @@ Ifremer storage is picked up at runtime, in addition to what is installed in the
   JupyterLab launcher.
 * `JUPYTER_APP_LAUNCHER_PATH=/scale/project/data-terra/intranet/odatis/vre-odatis/app_launcher`:
   `jp_app_launcher*.yml` files in this folder (with their `images/` folder, referenced as
-  `./images/...`) add entries to the launcher, next to the ones shipped in
-  `/usr/local/share/jupyter/jupyter_app_launcher`.
+  `./images/...`) define the entries of the launcher. The image itself ships no app launcher
+  entry: they are all managed in this shared folder.
 
 If a folder does not exist (e.g. when running the image outside the Ifremer infrastructure), it is
 simply ignored.
