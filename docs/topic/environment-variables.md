@@ -28,3 +28,19 @@ chmod +x /usr/local/bin/start-notebook-application.sh
 
 export SOME_VARIABLE="some value"
 ```
+
+## Shared kernels and app launcher (vre-odatis)
+
+The `vreodatis` image sets two variables in its `Dockerfile` so that configuration shared on the
+Ifremer storage is picked up at runtime, in addition to what is installed in the image:
+
+* `JUPYTER_PATH=/scale/project/data-terra/intranet/odatis/vre-odatis`: every kernel spec stored as
+  `/scale/project/data-terra/intranet/odatis/vre-odatis/kernels/<name>/kernel.json` shows up in the
+  JupyterLab launcher.
+* `JUPYTER_APP_LAUNCHER_PATH=/scale/project/data-terra/intranet/odatis/vre-odatis/app_launcher`:
+  `jp_app_launcher*.yml` files in this folder (with their `images/` folder, referenced as
+  `./images/...`) add entries to the launcher, next to the ones shipped in
+  `/usr/local/share/jupyter/jupyter_app_launcher`.
+
+If a folder does not exist (e.g. when running the image outside the Ifremer infrastructure), it is
+simply ignored.
