@@ -1,5 +1,20 @@
 # How to launch a notebook using these images
 
+## On Datarmor (vre-odatis)
+
+The `vre-odatis` image is run on Datarmor with Apptainer and Slurm by
+[jupyter-configs](https://gitlab.ifremer.fr/odatis-public/vre/jupyter-configs):
+
+```bash
+make pull-system/vre-odatis TAG=0.2.0
+make run/vre-odatis       # Slurm job running JupyterLab
+make tunnel/vre-odatis    # SSH tunnel command and URL
+```
+
+Locally, `make run` starts JupyterLab from the `vre-odatis:master` image built by `make build`.
+
+The sections below come from the upstream CNES project.
+
 ## How to use the `pangeo-notebook` image with Binder
 
 A major use-case for these images is running an ephemeral server on the Cloud with BinderHub. Anyone can launch a server running the latest-and-greatest `pangeo-notebook` image with the following URL

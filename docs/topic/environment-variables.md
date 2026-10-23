@@ -29,18 +29,20 @@ chmod +x /usr/local/bin/start-notebook-application.sh
 export SOME_VARIABLE="some value"
 ```
 
-## Shared kernels and app launcher (vre-odatis)
+## Kernels and app launcher of the VRE
 
-The `vreodatis` image sets two variables in its `Dockerfile` so that configuration shared on the
-Ifremer storage is picked up at runtime, in addition to what is installed in the image:
+Two variables tell JupyterLab where the configuration of the VRE is stored, outside the image:
 
-* `JUPYTER_PATH=/scale/project/data-terra/intranet/odatis/vre-odatis`: every kernel spec stored as
-  `/scale/project/data-terra/intranet/odatis/vre-odatis/kernels/<name>/kernel.json` shows up in the
-  JupyterLab launcher.
-* `JUPYTER_APP_LAUNCHER_PATH=/scale/project/data-terra/intranet/odatis/vre-odatis/app_launcher`:
-  `jp_app_launcher*.yml` files in this folder (with their `images/` folder, referenced as
-  `./images/...`) define the entries of the launcher. The image itself ships no app launcher
-  entry: they are all managed in this shared folder.
+* `JUPYTER_PATH`: Jupyter looks for kernels in `${JUPYTER_PATH}/kernels/<name>/kernel.json`.
+* `JUPYTER_APP_LAUNCHER_PATH`: folder of the `jp_app_launcher*.yml` files (with their `images/`
+  folder, referenced as `./images/...`) that define the entries of the launcher. The image itself
+  ships no launcher entry.
+
+The `Dockerfile` gives them default values on the Ifremer storage
+(`/scale/project/data-terra/intranet/odatis/vre-odatis` and `.../vre-odatis/app_launcher`). On
+Datarmor, [jupyter-configs](https://gitlab.ifremer.fr/odatis-public/vre/jupyter-configs)
+overrides them for each VRE with its `vre/<vre>/.env` file (`apptainer run --env-file`), so the
+same image can serve several VREs with different kernels and launchers.
 
 If a folder does not exist (e.g. when running the image outside the Ifremer infrastructure), it is
 simply ignored.
